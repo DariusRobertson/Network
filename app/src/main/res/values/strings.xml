@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SocialMeet</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="new_sign_up_here">New? Sign up here.</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="Full_name">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="next">Next</string>
+</resources>

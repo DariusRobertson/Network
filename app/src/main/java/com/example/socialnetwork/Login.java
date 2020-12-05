@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +40,8 @@ public class Login extends AppCompatActivity {
         userPassword = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
 
+
+
         //sends user to signUp field if clicked and user !=null
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,25 +54,57 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             String stringEmail =  userEmail.getText().toString();
-              String stringPassword =  userPassword.getText().toString();
-                mAuth.signInWithEmailAndPassword(stringEmail,stringPassword)
-                        .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    Log.d("Good","SignIn Successful");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    startActivity(new Intent(Login.this,Category.class));
-                                }else{
-                                    Log.w("Fail","SignIn:Failed", task.getException());
-                                    Toast.makeText(Login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                String stringEmail = userEmail.getText().toString();
+                String stringPassword = userPassword.getText().toString();
+
+                //handling some possible user errors
+                if (stringEmail.isEmpty()) {
+                    Toast.makeText(Login.this, "Email is empty", Toast.LENGTH_SHORT).show();
+
+                } else if (stringPassword.isEmpty()) {
+                    Toast.makeText(Login.this, "Password is empty", Toast.LENGTH_SHORT).show();
+
+                } else if (!isValidEmail(stringEmail)) {
+                    Toast.makeText(Login.this, "email is not valid", Toast.LENGTH_SHORT).show();
+
+                } else if (!isValidPassword(stringPassword)) {
+                    Toast.makeText(Login.this, "Password must be > 7", Toast.LENGTH_LONG).show();
+
+                } else {
+                    mAuth.signInWithEmailAndPassword(stringEmail, stringPassword)
+                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d("Good", "SignIn Successful");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        startActivity(new Intent(Login.this, Category.class));
+                                    } else {
+                                        Log.w("Fail", "SignIn:Failed", task.getException());
+                                        Toast.makeText(Login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+
+                                    }
 
                                 }
-
-                            }
-                        });
+                            });
+                }
             }
         });
     }
-}
+/*******
+ * for later to automatically sign in users if current user is not null
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        startActivity(new Intent(Login.this,MainActivity.class));
+    }
+ *****/
+
+
+    private boolean isValidEmail(CharSequence target){
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+    private boolean isValidPassword(String password){
+        return password.length() > 7;
+    }
+    }

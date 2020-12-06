@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialNetwork">
-        <activity android:name=".SecondSignUp"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Category" />
         <activity android:name=".Login">

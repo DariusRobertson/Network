@@ -4,13 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.nfc.cardemulation.CardEmulation;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.SingleLineTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +30,8 @@ public class SignUp extends AppCompatActivity {
     private EditText userPassword;
     private FirebaseAuth mAuth;
     private Button nextBttn;
+    private TextView existingUser;
+    private Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,26 @@ public class SignUp extends AppCompatActivity {
         nextBttn = findViewById(R.id.NextLogin);
         userPassword = findViewById(R.id.NewUserPassword);
         mAuth = FirebaseAuth.getInstance();
+        existingUser = findViewById(R.id.sendToLogin);
+        testButton = findViewById(R.id.TestingButton);
+
+        //Button used to get to categories screen without having to create new users over and over
+        //for testing only
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUp.this,Category.class));
+            }
+        });
+
+
+        //sending a user back to login if they already have an account
+        existingUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUp.this, Login.class));
+            }
+        });
 
         //Creating a new user with firebase
       nextBttn.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +70,9 @@ public class SignUp extends AppCompatActivity {
               String password = userPassword.getText().toString();
               String email = userEmail.getText().toString();
               final String name = customerName.getText().toString();
-              if (email.isEmpty()) {
+              if(password.isEmpty() && name.isEmpty() && email.isEmpty()){
+                  Toast.makeText(SignUp.this,"Please fill in text fields before hitting next.",Toast.LENGTH_LONG).show();
+              } else if (email.isEmpty()) {
                   Toast.makeText(SignUp.this, "Email is empty", Toast.LENGTH_SHORT).show();
               } else if (password.isEmpty()) {
                   Toast.makeText(SignUp.this, "Password is empty", Toast.LENGTH_SHORT).show();
@@ -65,8 +92,9 @@ public class SignUp extends AppCompatActivity {
                                       FirebaseUser user = mAuth.getCurrentUser();
                                       UserProfileChangeRequest addName = new UserProfileChangeRequest.Builder()
                                               .setDisplayName(name).build();
+                                      assert user != null;
                                       user.updateProfile(addName);
-                                      startActivity(new Intent(SignUp.this, SecondSignUp.class));
+                                      startActivity(new Intent(SignUp.this, Category.class));
 
                                   } else {
                                       Log.w("Failed", "AccountCreation:Failed", task.getException());

@@ -4,10 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.nfc.cardemulation.CardEmulation;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.method.SingleLineTransformationMethod;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -22,6 +20,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
@@ -32,7 +35,6 @@ public class SignUp extends AppCompatActivity {
     private Button nextBttn;
     private TextView existingUser;
     private Button testButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,7 @@ public class SignUp extends AppCompatActivity {
           @Override
           public void onClick(View view) {
               String password = userPassword.getText().toString();
-              String email = userEmail.getText().toString();
+              final String email = userEmail.getText().toString();
               final String name = customerName.getText().toString();
               if(password.isEmpty() && name.isEmpty() && email.isEmpty()){
                   Toast.makeText(SignUp.this,"Please fill in text fields before hitting next.",Toast.LENGTH_LONG).show();

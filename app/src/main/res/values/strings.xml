@@ -9,12 +9,14 @@
     <string name="phone">Phone</string>
     <string name="next">Next</string>
     <string name="this_will_help_us_decide_who_and_what_you_see_on_our_app">This will help us decide who and what you see on our app!</string>
-    <string name="please_select_the_categories_you_fit_best_in">Please select the catagories you fit best in</string>
+    <string name="select_the_categories_you_fit_best_in">Select the categories you fit best in</string>
     <string name="finish">Finish</string>
     <string name="i_like_this">I Like this</string>
     <string name="engineering">Engineering</string>
     <string name="art">Art</string>
     <string name="history">History</string>
-    <string name="please_type_here">Please Type Here</string>
-    <string name="please_enter_occupation_or_major">Please enter occupation or major</string>
+    <string name="type_here">Type Here</string>
+    <string name="enter_occupation_or_major">Enter occupation or major</string>
+    <string name="please_enter_occupation_or_major" />
+    <string name="please_type_here" />
 </resources>

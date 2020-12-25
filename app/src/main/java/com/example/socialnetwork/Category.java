@@ -32,37 +32,7 @@ public class Category extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        engineeringCheckBox = findViewById(R.id.checkBox3);
-        artCheckBox = findViewById(R.id.checkBox4);
-        spaceCheckbox = findViewById(R.id.checkBox5);
-        historyCheckBox = findViewById(R.id.checkBox6);
-        finish = findViewById(R.id.Finish);
-        occupation = findViewById(R.id.textView9);
 
-        finish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isClickedItem(engineeringCheckBox) && isClickedItem(spaceCheckbox)
-                && !isClickedItem(artCheckBox) && !isClickedItem(historyCheckBox)){
-                    stemCount += 10;
-                    artsyCount--;
-                    humanitiesCount--;
-                }else if (!isClickedItem(engineeringCheckBox) && isClickedItem(spaceCheckbox)
-                        && !isClickedItem(artCheckBox) && !isClickedItem(historyCheckBox)){
-                    stemCount += 5;
-                    humanitiesCount++;
-                    artsyCount++;
-                }else if (!isClickedItem(engineeringCheckBox) && !isClickedItem(spaceCheckbox)
-                        && isClickedItem(artCheckBox) && isClickedItem(historyCheckBox)){
-                    humanitiesCount += 5;
-                    artsyCount += 5;
-                    stemCount--;
-                }
-                Toast.makeText(Category.this, "Profile Created", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Category.this,MainActivity.class));
-
-            }
-        });
     }
 
 

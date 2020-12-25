@@ -62,46 +62,28 @@ public class Category extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isClickedItem(engineeringCheckBox))
-                    stemCount++;
-                if (isClickedItem(artCheckBox))
-                    artsyCount++;
-                if (isClickedItem(spaceCheckbox))
-                    stemCount++;
-                if (isClickedItem(historyCheckBox))
-                    humanitiesCount++;
-                if (isClickedItem(ScienceCheckbox))
-                    stemCount++;
-                if (isClickedItem(englishCheckbox)) {
-                    humanitiesCount++;
-                    artsyCount++;
-                }
-                if (isClickedItem(mathCheckbox))
-                    stemCount++;
-                if (isClickedItem(signingCheckbox))
-                    artsyCount ++;
-                if (isClickedItem(dancingCheckbox))
-                    artsyCount ++;
 
-                if (isClickedItem(engineeringCheckBox) && isClickedItem(mathCheckbox) && isClickedItem(spaceCheckbox) &&
+
+               if (isClickedItem(engineeringCheckBox) || isClickedItem(mathCheckbox) || isClickedItem(spaceCheckbox) ||
                 isClickedItem(ScienceCheckbox)) {
                     stemCount += 10;
                     humanitiesCount--;
                     artsyCount--;
+                   startActivity(new Intent(Category.this,MainActivity.class));
                 }
-                    if (isClickedItem(artCheckBox) && isClickedItem(signingCheckbox) && isClickedItem(englishCheckbox) &&
+                  else  if (isClickedItem(artCheckBox) || isClickedItem(signingCheckbox) || isClickedItem(englishCheckbox) ||
                     isClickedItem(dancingCheckbox)){
                         humanitiesCount += 5;
                         artsyCount += 5;
                         stemCount --;
+                    startActivity(new Intent(Category.this,MainActivity.class));
                     }
 
-                if (!isClickedItem(artCheckBox) && !isClickedItem(signingCheckbox) && !isClickedItem(englishCheckbox) &&
+                else if (!isClickedItem(artCheckBox) && !isClickedItem(signingCheckbox) && !isClickedItem(englishCheckbox) &&
                         !isClickedItem(dancingCheckbox) && !isClickedItem(engineeringCheckBox) && !isClickedItem(mathCheckbox) && isClickedItem(spaceCheckbox) &&
                         !isClickedItem(ScienceCheckbox)){
                     Toast.makeText(Category.this, "Please select a category", Toast.LENGTH_LONG).show();
-                }else
-                    startActivity(new Intent(Category.this,MainActivity.class));
+                }
 
             }
         });

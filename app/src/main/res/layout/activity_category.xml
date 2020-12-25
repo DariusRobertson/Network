@@ -42,7 +42,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox7"
+                    android:id="@+id/ScienceBox"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:text="CheckBox"
@@ -57,7 +57,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox8"
+                    android:id="@+id/engineeringBox"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:text="CheckBox" />
@@ -71,7 +71,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/MathBox"
                     android:layout_width="match_parent"
                     android:layout_height="81dp"
                     android:text="CheckBox" />
@@ -85,7 +85,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/artBox"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:text="CheckBox" />
@@ -99,7 +99,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox3"
+                    android:id="@+id/historyBox"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:text="CheckBox" />
@@ -113,9 +113,23 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox4"
+                    android:id="@+id/englishBox"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
+                    android:text="CheckBox" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:text="Space"
+                    android:textColor="#03A9F4"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/SpaceBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
                     android:text="CheckBox" />
 
                 <TextView
@@ -127,7 +141,7 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox5"
+                    android:id="@+id/dancingBox"
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
                     android:text="CheckBox" />
@@ -141,21 +155,23 @@
                     android:textSize="24sp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox6"
+                    android:id="@+id/signingBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="CheckBox" />
 
-                <EditText
-                    android:id="@+id/editTextTextPersonName"
+                <TextView
+                    android:id="@+id/textView26"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Add Occupation"
-                    android:inputType="textPersonName"
+                    android:text="Choose Your Occupation"
                     android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textSize="18sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="141dp" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -176,6 +192,7 @@
                     android:text="@string/finish"
                     android:textAlignment="center"
                     app:backgroundTint="#2196F3" />
+
             </LinearLayout>
         </ScrollView>
 

@@ -170,18 +170,11 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView"
                     android:layout_width="match_parent"
-                    android:layout_height="141dp" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/this_will_help_us_decide_who_and_what_you_see_on_our_app"
-                    android:textAlignment="textStart"
-                    android:textColor="#2196F3"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:layout_height="141dp"
+                    android:padding="4dp"
+                    android:scrollbars="vertical" />
 
                 <Button
                     android:id="@+id/Finish"

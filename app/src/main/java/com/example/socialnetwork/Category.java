@@ -2,6 +2,8 @@ package com.example.socialnetwork;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class Category extends AppCompatActivity {
 
     private Button engineeringCheckBox;
@@ -27,6 +31,10 @@ public class Category extends AppCompatActivity {
     private Button mathCheckbox;
     private Button signingCheckbox;
     private Button dancingCheckbox;
+    private RecyclerView mRecylerView;
+    private exampleAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<Example_list> itemTemplates;
 
     private int stemCount = 0;
     private int artsyCount = 0;
@@ -48,6 +56,8 @@ public class Category extends AppCompatActivity {
         dancingCheckbox = findViewById(R.id.dancingBox);
 
 
+        createExampleList();
+        buildRecylerView();
 
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +107,43 @@ public class Category extends AppCompatActivity {
         });
 
 
+    }
+
+    public void changeItem(int position, String text){
+        itemTemplates.get(position).changeText1(text);
+        mAdapter.notifyItemChanged(position);
+    }
+
+
+    private void buildRecylerView() {
+        mRecylerView = findViewById(R.id.recylerView);
+        mRecylerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new exampleAdapter(itemTemplates);
+
+        mRecylerView.setLayoutManager(mLayoutManager);
+        mRecylerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new exampleAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                changeItem(position, "Selected");
+            }
+        });
+    }
+
+    private void createExampleList() {
+        itemTemplates = new ArrayList<>();
+        itemTemplates.add(new Example_list("Software Engineer"));
+        itemTemplates.add(new Example_list("Accountant"));
+        itemTemplates.add(new Example_list("Teacher or professor"));
+        itemTemplates.add(new Example_list("Lawyer"));
+        itemTemplates.add(new Example_list("Mechanical engineer"));
+        itemTemplates.add(new Example_list("Electrical Engineer"));
+        itemTemplates.add(new Example_list("Nurse"));
+        itemTemplates.add(new Example_list("Surgeon"));
+        itemTemplates.add(new Example_list("Doctor"));
+        itemTemplates.add(new Example_list("Dentist"));
     }
 
     public String occupation(String occupation){

@@ -1,6 +1,7 @@
 package com.example.socialnetwork;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -46,6 +47,8 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         existingUser = findViewById(R.id.sendToLogin);
         testButton = findViewById(R.id.TestingButton);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
 
         //Button used to get to categories screen without having to create new users over and over
         //for testing only

@@ -2,6 +2,7 @@ package com.example.socialnetwork;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -39,6 +40,8 @@ public class Login extends AppCompatActivity {
         userEmail = findViewById(R.id.email);
         userPassword = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
 
 
 

@@ -1,6 +1,7 @@
 package com.example.socialnetwork;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,6 +55,8 @@ public class Category extends AppCompatActivity {
         mathCheckbox = findViewById(R.id.MathBox);
         signingCheckbox = findViewById(R.id.signingBox);
         dancingCheckbox = findViewById(R.id.dancingBox);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
 
 
         createExampleList();

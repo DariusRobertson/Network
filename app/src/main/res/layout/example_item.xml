@@ -8,7 +8,9 @@
     <RelativeLayout
         android:layout_width="401dp"
         android:layout_height="95dp"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:background="@color/white"
+        >
 
         <TextView
             android:id="@+id/AdapterTextView"

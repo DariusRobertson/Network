@@ -12,17 +12,28 @@
             android:title="Profile"/>
 
         <item
+            android:icon="@drawable/ic_promotion"
+            android:id="@+id/promotion"
+            android:title="Promote"/>
+
+        <item
+            android:icon="@drawable/ic_explore"
+            android:id="@+id/explore"
+            android:title="Explore"/>
+
+        <item
             android:icon="@drawable/ic_baseline_settings_24"
             android:id="@+id/settings"
             android:title="Settings"/>
-        <item
-            android:icon="@drawable/ic_logout"
-            android:id="@+id/logout"
-            android:title="Logout"/>
+
     </group>
-    <item android:title="Communication">
+    <item android:title="More">
 
         <menu>
+            <item
+                android:icon="@drawable/ic_logout"
+                android:id="@+id/logout"
+                android:title="Logout"/>
             <item android:id="@+id/share"
                 android:icon="@drawable/ic_baseline_share_24"
                 android:title="Share"/>

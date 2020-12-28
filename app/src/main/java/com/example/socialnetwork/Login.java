@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
     private TextView newUser;
@@ -94,14 +95,16 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-/*******
- * for later to automatically sign in users if current user is not null
+    //signs in user if they didn't logout
     public void onStart() {
+        FirebaseAuth fAuth;
+        fAuth = FirebaseAuth.getInstance();
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(fAuth.getCurrentUser() != null)
         startActivity(new Intent(Login.this,MainActivity.class));
     }
- *****/
+
 
 
     private boolean isValidEmail(CharSequence target){

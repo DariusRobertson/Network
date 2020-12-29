@@ -7,39 +7,39 @@
 
     <group android:checkableBehavior="single" >
         <item
-            android:icon="@drawable/ic_baseline_home_24"
+            android:icon="@drawable/ic_newprofile"
             android:id="@+id/profile"
-            android:title="Profile"/>
+            android:title="@string/profile"/>
 
         <item
             android:icon="@drawable/ic_promotion"
             android:id="@+id/promotion"
-            android:title="Promote"/>
+            android:title="@string/promote"/>
 
         <item
             android:icon="@drawable/ic_explore"
             android:id="@+id/explore"
-            android:title="Explore"/>
+            android:title="@string/explore"/>
 
         <item
             android:icon="@drawable/ic_baseline_settings_24"
             android:id="@+id/settings"
-            android:title="Settings"/>
+            android:title="@string/settings"/>
 
     </group>
-    <item android:title="More">
+    <item android:title="@string/more">
 
         <menu>
             <item
                 android:icon="@drawable/ic_logout"
                 android:id="@+id/logout"
-                android:title="Logout"/>
+                android:title="@string/logout"/>
             <item android:id="@+id/share"
                 android:icon="@drawable/ic_baseline_share_24"
-                android:title="Share"/>
+                android:title="@string/share"/>
             <item android:id="@+id/send"
                 android:icon="@drawable/ic_baseline_send_24"
-                android:title="Send"/>
+                android:title="@string/send"/>
         </menu>
     </item>
 

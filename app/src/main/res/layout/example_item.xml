@@ -16,7 +16,7 @@
             android:id="@+id/AdapterTextView"
             android:layout_width="218dp"
             android:layout_height="97dp"
-            android:text="Line1"
+            android:text="@string/line1"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="24sp"
             android:textStyle="bold" />

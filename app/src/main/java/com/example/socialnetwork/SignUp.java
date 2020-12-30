@@ -46,18 +46,9 @@ public class SignUp extends AppCompatActivity {
         userPassword = findViewById(R.id.NewUserPassword);
         mAuth = FirebaseAuth.getInstance();
         existingUser = findViewById(R.id.sendToLogin);
-        testButton = findViewById(R.id.TestingButton);
+
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
-
-        //Button used to get to categories screen without having to create new users over and over
-        //for testing only
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignUp.this,Category.class));
-            }
-        });
 
 
         //sending a user back to login if they already have an account

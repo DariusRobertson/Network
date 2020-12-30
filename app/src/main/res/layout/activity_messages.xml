@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".Messages"
     tools:openDrawer="start"
     >
 
@@ -58,9 +58,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="message content here"
         android:textAlignment="center"
-        android:gravity="center"
-        android:text="Main content here"/>
+        android:gravity="center"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -72,5 +72,5 @@
         />
 
 
-</androidx.drawerlayout.widget.DrawerLayout>
 
+</androidx.drawerlayout.widget.DrawerLayout>

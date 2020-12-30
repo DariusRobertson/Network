@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".Profile"
     tools:openDrawer="start"
     >
 
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:gravity="center"
-        android:text="Main content here"/>
+        android:text="Profile content here"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -73,4 +73,3 @@
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
-

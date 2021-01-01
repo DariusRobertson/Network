@@ -75,9 +75,6 @@ public class Promotion extends AppCompatActivity implements NavigationView.OnNav
                         case R.id.messages:
                             break;
 
-                        case R.id.userPost:
-                            startActivity(new Intent(getApplicationContext(), Post.class));
-                            break;
                     }
 
                     return true;

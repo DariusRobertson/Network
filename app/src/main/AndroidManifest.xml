@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
-        <activity android:name=".Messages"></activity>
+        <activity android:name=".Messages"/>
         <activity android:name=".Post" />
         <activity android:name=".Promotion" />
         <activity android:name=".Explore" />
@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUp" />
+
     </application>
 
 </manifest>

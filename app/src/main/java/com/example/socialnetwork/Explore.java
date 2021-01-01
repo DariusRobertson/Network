@@ -54,15 +54,16 @@ public class Explore extends AppCompatActivity implements NavigationView.OnNavig
 
                     switch (item.getItemId()){
                         case R.id.main:
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             break;
 
                         case R.id.messages:
                             startActivity(new Intent(getApplicationContext(), Messages.class));
                             break;
 
-                        case R.id.userPost:
-                            startActivity(new Intent(getApplicationContext(), Post.class));
+                        case R.id.explore:
                             break;
+
                     }
 
                     return true;

@@ -26,16 +26,17 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/Theme.AppCompat.Light" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 
+
+
+
     <RelativeLayout
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:orientation="vertical">
         <FrameLayout
             android:id="@+id/fragment_bottom_container"
             android:layout_width="match_parent"
@@ -51,7 +52,9 @@
             app:itemIconTint="@color/black"
             app:itemTextColor="@color/black"
             android:background="@color/white"
-            />
+            >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </RelativeLayout>
 
@@ -60,7 +63,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:gravity="center"
-        android:text="Profile content here"/>
+        android:text="Main content here"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

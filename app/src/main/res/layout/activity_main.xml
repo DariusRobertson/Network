@@ -35,12 +35,37 @@
 
     <RelativeLayout
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
-        <FrameLayout
-            android:id="@+id/fragment_bottom_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/bottom_navigation"/>
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_above="@id/bottom_navigation">
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mainRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:overScrollMode="ifContentScrolls"
+                    android:textAlignment="center" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/mainPostButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:contentDescription="@string/post"
+                    android:padding="25dp"
+                    app:backgroundTint="#03A9F4"
+                    app:srcCompat="@drawable/ic_baseline_post_add_24" />
+
+
+            </FrameLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -55,12 +80,7 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="Main content here"/>
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

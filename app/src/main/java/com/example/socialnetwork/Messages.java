@@ -74,9 +74,6 @@ public class Messages extends AppCompatActivity implements NavigationView.OnNavi
                         case R.id.messages:
                             break;
 
-                        case R.id.userPost:
-                            startActivity(new Intent(getApplicationContext(), Post.class));
-                            break;
                     }
 
                     return true;

@@ -9,8 +9,8 @@
         android:id="@+id/messages"
         android:title="@string/Message"/>
     <item
-        android:icon="@drawable/ic_baseline_post_add_24"
-        android:id="@+id/userPost"
-        android:title="@string/post"/>
+        android:icon="@drawable/ic_explore"
+        android:id="@+id/explore"
+        android:title="@string/explore"/>
 
 </menu>

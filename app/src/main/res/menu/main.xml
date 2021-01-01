@@ -5,6 +5,7 @@
     tools:showIn="navigation_view"
     >
 
+
     <group android:checkableBehavior="single" >
         <item
             android:icon="@drawable/ic_newprofile"

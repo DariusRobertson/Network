@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mainPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getApplicationContext(), MainPostAction.class));
             }
         });
 
@@ -80,6 +81,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+       new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+               ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+           @Override
+           public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+               return false;
+           }
+
+           @Override
+           public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            adapter.deleteItem(viewHolder.getAdapterPosition());
+           }
+
+       }).attachToRecyclerView(recyclerView);
 
     }
 

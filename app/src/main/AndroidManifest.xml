@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.socialnetwork">
 
     <application
@@ -9,12 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
-        <activity android:name=".Messages"/>
-        <activity android:name=".Post" />
+        <activity android:name=".MainPostAction"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".Messages" />
+        <activity android:name=".Post"
+            tools:ignore="Instantiatable" />
         <activity android:name=".Promotion" />
         <activity android:name=".Explore" />
         <activity android:name=".Profile" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTop"
+            />
         <activity android:name=".Category" />
         <activity android:name=".Login">
             <intent-filter>
@@ -24,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUp" />
-
     </application>
 
 </manifest>

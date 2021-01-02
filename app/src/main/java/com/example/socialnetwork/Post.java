@@ -5,31 +5,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Post{
-    private String text;
+    private String title;
     private int priority;
+    private String description;
 
     public Post (){
 
     }
 
-    public Post(String text, int priority){
+    public Post(String title, int priority, String description){
         this.priority = priority;
-        this.text = text;
+        this.title = title;
+        this.description = description;
+
     }
 
-    public String getText() {
-        return text;
+    public String getDescription() {
+        return description;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTitle() {
+
+        return title;
+    }
+
+    public void setTitle(String title) {
+
+        this.title = title;
     }
 
     public int getPriority() {
+
         return priority;
     }
 
     public void setPriority(int priority) {
+
         this.priority = priority;
     }
 }

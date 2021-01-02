@@ -63,6 +63,8 @@
     <string name="_1">1</string>
     <string name="description">Description</string>
     <string name="title">title</string>
+    <string name="share_your_ideas">Share Your Ideas</string>
+    <string name="priority">Priority</string>
 
 
 </resources>
